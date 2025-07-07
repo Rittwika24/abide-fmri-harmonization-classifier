@@ -38,7 +38,11 @@ Labels: Diagnostic labels (ASD vs. Typically Developing controls) are used for c
 
 ## Methodology
 The pipeline is structured into two main scripts, data_preprocessing.py and main_pipeline.py, to handle data efficiently and perform the multi-stage analysis.
+
 a. Data Preprocessing and Initial Chunking 
+The raw fMRI files can be downloaded from the following location: s3://fcp-indi/data/Projects/ABIDE_Initiative/Outputs/lle/.
+Both the LLE processed and unprocessed fMRI mat files can be found here. The unprocessed fMRI files have been used here.
+
 This initial script prepares the raw ABIDE fMRI data for the main pipeline:
 File Discovery & Loading: Scans a specified base directory for .mat files (assumed to contain HDF5 fMRI data).
 Data Extraction & Masking: Extracts 4D fMRI volumes (fMRIdata/orig), applies provided brain masks (fMRIdata/mask), and retrieves diagnostic labels (fMRIdata/dx).
