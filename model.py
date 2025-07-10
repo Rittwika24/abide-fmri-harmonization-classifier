@@ -9,9 +9,9 @@ class SliceCNN(nn.Module):
         # Input to Conv2d is (N_slices, 1, X, Y)
         self.conv1 = nn.Conv2d(1, 32, 3, padding=1)
         self.bn1 = nn.BatchNorm2d(32)
-        self.conv2 = nn.Conv2d(32, 64, 3, padding=1)
+        self.conv2 = nn.Conv2d(32, 64, 5, padding=1)
         self.bn2 = nn.BatchNorm2d(64)
-        self.conv3 = nn.Conv2d(64, out_dim, 3, padding=1)
+        self.conv3 = nn.Conv2d(64, out_dim, 5, padding=1)
         # AdaptiveAvgPool2d(1) will pool the spatial dimensions (X, Y) to 1x1,
         # so the output feature size is `out_dim` regardless of original X, Y dimensions
         self.pool = nn.AdaptiveAvgPool2d(1)
